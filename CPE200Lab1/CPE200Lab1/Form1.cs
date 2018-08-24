@@ -21,9 +21,11 @@ namespace CPE200Lab1
             InitializeComponent();
         }
 
+        int foo;
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -65,6 +67,25 @@ namespace CPE200Lab1
             }
             re = false;
         }
+
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            double Result;
+
+            if (lblDisplay.Text == "0")
+            {
+                Result = value * (value / 100);
+                lblDisplay.Text = Convert.ToString(Result);
+            }
+            else
+            {
+                double value2 = Convert.ToDouble(lblDisplay.Text);
+
+                Result = value * value2 / 100;
+                lblDisplay.Text = Convert.ToString(Result);
+            }
+        }
+
         void clickoper(object sender, EventArgs e)
         {
                Button btn = (Button)sender;
@@ -113,5 +134,6 @@ namespace CPE200Lab1
             re = true;
 
         }
+
     }
 }
